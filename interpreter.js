@@ -1,16 +1,8 @@
 const Interpreter = function() {
     return {
         read: function(input) {
-            //console.log(input);
-            // this.A = [];
-            // this.A.value = 0;
-            // this.B = [];
-            // this.A.value = 0;
-            // this.C = [];
-            // this.A.value = 0;
-            // this.stack = this.A;
-            // this.right = this.B;
-            // this.left = this.C;
+            console.log(input);
+
             if(!this.stack){
             this.stack=[];
             }
@@ -34,9 +26,9 @@ const Interpreter = function() {
                 } else if (ok === "-") {
                     this.stack[0]--;
                 } else if (ok === "<") {
-                    this.left.unshift(this.stack[0]);
+                    this.left.unshift(this.stack.shift());
                 } else if (ok === ">") {
-                    this.right.unshift(this.stack[0]);
+                    this.right.unshift(this.stack.shift());
                 } else if (ok === "*") {
                     this.stack.unshift(0);
 
@@ -82,3 +74,4 @@ const Interpreter = function() {
 }
 
 //brainscrambler esoteric programming #3
+
